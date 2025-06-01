@@ -2,6 +2,12 @@
 
 A fully responsive and tested **product dashboard** built using **Create React App**, **Redux Toolkit**, and **styled-components**, fetching data from the [Fake Store API](https://fakestoreapi.com). It features product browsing, filtering, sorting, detail view, and favoriting.
 
+## 🔗 Live Demo
+
+Hosted on Vercel: [https://fakestore-dashboard-nubt.vercel.app](https://fakestore-dashboard-nubt.vercel.app)
+
+---
+
 ## ✨ Features
 
 - 📦 **Product Listing Page**
@@ -131,12 +137,26 @@ Endpoints:
 
 ---
 
+## 🚀 Deployment
+
+The app is deployed using **Vercel** with CI/CD configured through GitHub.
+
+🔗 Live: [https://fakestore-dashboard-nubt.vercel.app](https://fakestore-dashboard-nubt.vercel.app)
+
+---
+
 ## 👨‍💻 Author
 
 **Keshav Agrawal**  
 Frontend Developer | React & Redux Enthusiast  
 📫 [keshavagrawal178@example.com](mailto:keshavagrawal178@example.com)  
 🐙 [GitHub](https://github.com/keshavagrawal18)
+
+---
+
+## 📹 Demo Video
+
+Loom walkthrough: [https://www.loom.com/share/93c9f97fc07545d88b8d49bdafc6d930](https://www.loom.com/share/93c9f97fc07545d88b8d49bdafc6d930)
 
 ---
 
