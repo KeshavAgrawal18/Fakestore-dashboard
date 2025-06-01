@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setSearchQuery } from "../features/products/productsSlice";
 import styled from "styled-components";
@@ -17,17 +17,18 @@ const SearchBar = () => {
   const [text, setText] = useState("");
   const dispatch = useDispatch();
 
-  const debouncedDispatch = useRef(
-    debounce((value) => {
+  const debouncedDispatch = useRef(null);
+
+  useEffect(() => {
+    debouncedDispatch.current = debounce((value) => {
       dispatch(setSearchQuery(value));
-    }, 300),
-    [dispatch]
-  );
+    }, 300);
+  }, [dispatch]);
 
   const handleChange = (e) => {
     const value = e.target.value;
     setText(value);
-    debouncedDispatch(value);
+    debouncedDispatch.current(value);
   };
 
   return (

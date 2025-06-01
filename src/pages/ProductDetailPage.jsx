@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
 import { addToFavorites } from "../features/favorites/favoritesSlice";
 import styled from "styled-components";

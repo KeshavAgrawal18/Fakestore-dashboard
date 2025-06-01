@@ -1,70 +1,152 @@
-# Getting Started with Create React App
+# 🛍️ Product Dashboard – React + Redux Toolkit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fully responsive and tested **product dashboard** built using **Create React App**, **Redux Toolkit**, and **styled-components**, fetching data from the [Fake Store API](https://fakestoreapi.com). It features product browsing, filtering, sorting, detail view, and favoriting.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- 📦 **Product Listing Page**
 
-### `npm start`
+  - Responsive grid of product cards
+  - Debounced search by product title
+  - Filter by category
+  - Sort by price (asc/desc)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🔍 **Product Detail Page**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  - Detailed product info
+  - Add/remove from favorites
 
-### `npm test`
+- ❤️ **Favorites Page**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - View and manage all favorited products
 
-### `npm run build`
+- ⚙️ **State Management**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - Global state using **Redux Toolkit** (products, filters, favorites)
+  - Asynchronous actions via **Redux Thunks**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 🧪 **Testing with Jest**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - Unit tests for Redux slices and UI components
+  - Integration tests for UI workflows (search, filter, favorite)
 
-### `npm run eject`
+- 🎨 **Styling**
+  - Built using **styled-components**
+  - Clean, accessible, and mobile-first UI
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Tech Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+| Category         | Technology                                 |
+| ---------------- | ------------------------------------------ |
+| Framework        | Create React App                           |
+| State Management | Redux Toolkit + Redux Thunks               |
+| Routing          | React Router DOM                           |
+| Styling          | styled-components                          |
+| Testing          | Jest, React Testing Library                |
+| API              | [Fake Store API](https://fakestoreapi.com) |
+| Deployment       | Vercel                                     |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📁 Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+├── public/                      # CRA public assets
+├── src/
+│   ├── app/                     # Redux store
+│   │   └── store.js
+│   ├── components/              # Reusable UI components
+│   │   └── __tests__/           # Component tests
+│   ├── features/                # Redux slices
+│   │   ├── products/            # Products slice + tests
+│   │   └── favorites/           # Favorites slice + tests
+│   ├── pages/                   # Page-level components
+│   │   └── __tests__/           # Page tests
+│   ├── routes/                  # Route configurations
+│   ├── utils/                   # Helpers (API, debounce)
+│   ├── App.js / index.js        # Entry point and app shell
+│   └── setupTests.js            # Jest test environment
+├── __mocks__/                   # Mocks for react-router
+├── jest.config.js               # Jest configuration
+├── babel.config.js              # Babel config
+├── README.md
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🧪 Running Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Run all tests
 
-### Analyzing the Bundle Size
+```bash
+npm test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Run with coverage report
 
-### Making a Progressive Web App
+```bash
+npm test -- --coverage
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+> ✅ Coverage includes Redux slices, components, pages, and integration workflows.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📦 Installation
 
-### Deployment
+### 1. Clone the Repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+git clone https://github.com/keshavagrawal18/fakestore-dashboard.git
+cd fakestore-dashboard
+```
 
-### `npm run build` fails to minify
+### 2. Install Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm install
+```
+
+### 3. Start the Development Server
+
+```bash
+npm start
+```
+
+> Runs at `http://localhost:3000`
+
+---
+
+## 🌐 API Used
+
+Data is fetched from: [https://fakestoreapi.com](https://fakestoreapi.com)
+
+Endpoints:
+
+- `/products` - all products
+- `/products/categories` - all categories
+- `/products/:id` - individual product
+
+---
+
+## 👨‍💻 Author
+
+**Keshav Agrawal**  
+Frontend Developer | React & Redux Enthusiast  
+📫 [keshavagrawal178@example.com](mailto:keshavagrawal178@example.com)  
+🐙 [GitHub](https://github.com/keshavagrawal18)
+
+---
+
+## ✅ Evaluation Checklist
+
+- [x] CRA + functional React components
+- [x] Redux Toolkit + async thunks
+- [x] Pages: listing, detail, favorites
+- [x] Debounced search, filter, sort
+- [x] Jest unit + integration tests
+- [x] Styled-components UI
+- [x] Mobile responsive + accessible
+- [x] Hosted on Vercel
